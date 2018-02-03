@@ -1,0 +1,10 @@
+(function() {var implementors = {};
+implementors["actix"] = ["impl&lt;A, M&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/convert/trait.From.html\" title=\"trait core::convert::From\">From</a>&lt;<a class=\"struct\" href=\"actix/dev/struct.RemoteEnvelope.html\" title=\"struct actix::dev::RemoteEnvelope\">RemoteEnvelope</a>&lt;A, M&gt;&gt; for <a class=\"struct\" href=\"actix/dev/struct.Envelope.html\" title=\"struct actix::dev::Envelope\">Envelope</a>&lt;A&gt; <span class=\"where fmt-newline\">where<br>&nbsp;&nbsp;&nbsp;&nbsp;A: <a class=\"trait\" href=\"actix/prelude/trait.Actor.html\" title=\"trait actix::prelude::Actor\">Actor</a> + <a class=\"trait\" href=\"actix/prelude/trait.Handler.html\" title=\"trait actix::prelude::Handler\">Handler</a>&lt;M&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;A::<a class=\"type\" href=\"actix/prelude/trait.Actor.html#associatedtype.Context\" title=\"type actix::prelude::Actor::Context\">Context</a>: <a class=\"trait\" href=\"actix/prelude/trait.AsyncContext.html\" title=\"trait actix::prelude::AsyncContext\">AsyncContext</a>&lt;A&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;M: <a class=\"trait\" href=\"actix/prelude/trait.ResponseType.html\" title=\"trait actix::prelude::ResponseType\">ResponseType</a> + <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Send.html\" title=\"trait core::marker::Send\">Send</a> + 'static,&nbsp;</span>","impl&lt;T, E, A&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/convert/trait.From.html\" title=\"trait core::convert::From\">From</a>&lt;<a class=\"enum\" href=\"https://doc.rust-lang.org/nightly/core/result/enum.Result.html\" title=\"enum core::result::Result\">Result</a>&lt;T, E&gt;&gt; for <a class=\"struct\" href=\"actix/fut/struct.FutureResult.html\" title=\"struct actix::fut::FutureResult\">FutureResult</a>&lt;T, E, A&gt;",];
+
+            if (window.register_implementors) {
+                window.register_implementors(implementors);
+            } else {
+                window.pending_implementors = implementors;
+            }
+        
+})()

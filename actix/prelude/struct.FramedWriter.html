@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FramedWriter` struct in crate `actix`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FramedWriter">
+
+    <title>actix::prelude::FramedWriter - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct FramedWriter</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.close">close</a><a href="#method.closed">closed</a><a href="#method.send">send</a><a href="#method.drain">drain</a><a href="#method.take">take</a></div></div><p class='location'><a href='../index.html'>actix</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'FramedWriter', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>actix</a>::<wbr><a href='index.html'>prelude</a>::<wbr><a class="struct" href=''>FramedWriter</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/actix/framed.rs.html#40-44' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct FramedWriter&lt;Io, Codec&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Io: <a class="trait" href="https://docs.rs/tokio-io/0.1/tokio_io/trait.AsyncRead.html" title="trait tokio_io::AsyncRead">AsyncRead</a> + <a class="trait" href="https://docs.rs/tokio-io/0.1/tokio_io/trait.AsyncWrite.html" title="trait tokio_io::AsyncWrite">AsyncWrite</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;Codec: <a class="trait" href="https://docs.rs/tokio-io/0.1/tokio_io/framed_write/trait.Encoder.html" title="trait tokio_io::framed_write::Encoder">Encoder</a> + <a class="trait" href="https://docs.rs/tokio-io/0.1/tokio_io/framed_read/trait.Decoder.html" title="trait tokio_io::framed_read::Decoder">Decoder</a>,&nbsp;</span> { /* fields omitted */ }</pre><div class='docblock'><p>Framed sink type wrapper, that simplify handling framed objects with actor</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;Io, Codec&gt; <a class="struct" href="../../actix/struct.FramedWriter.html" title="struct actix::FramedWriter">FramedWriter</a>&lt;Io, Codec&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Io: <a class="trait" href="https://docs.rs/tokio-io/0.1/tokio_io/trait.AsyncRead.html" title="trait tokio_io::AsyncRead">AsyncRead</a> + <a class="trait" href="https://docs.rs/tokio-io/0.1/tokio_io/trait.AsyncWrite.html" title="trait tokio_io::AsyncWrite">AsyncWrite</a> + 'static,<br>&nbsp;&nbsp;&nbsp;&nbsp;Codec: <a class="trait" href="https://docs.rs/tokio-io/0.1/tokio_io/framed_write/trait.Encoder.html" title="trait tokio_io::framed_write::Encoder">Encoder</a> + <a class="trait" href="https://docs.rs/tokio-io/0.1/tokio_io/framed_read/trait.Decoder.html" title="trait tokio_io::framed_read::Decoder">Decoder</a> + 'static,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/actix/framed.rs.html#81-145' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.close' class="method"><span id='close.v' class='invisible'><code>pub fn <a href='#method.close' class='fnname'>close</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/actix/framed.rs.html#97-99' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gracefully close framed object</p>
+
+<p>Close process is asynchronous.</p>
+</div><h4 id='method.closed' class="method"><span id='closed.v' class='invisible'><code>pub fn <a href='#method.closed' class='fnname'>closed</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/actix/framed.rs.html#102-104' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check if framed object is closed</p>
+</div><h4 id='method.send' class="method"><span id='send.v' class='invisible'><code>pub fn <a href='#method.send' class='fnname'>send</a>(&amp;mut self, msg: &lt;Codec as <a class="trait" href="https://docs.rs/tokio-io/0.1/tokio_io/framed_write/trait.Encoder.html" title="trait tokio_io::framed_write::Encoder">Encoder</a>&gt;::<a class="type" href="https://docs.rs/tokio-io/0.1/tokio_io/framed_write/trait.Encoder.html#associatedtype.Item" title="type tokio_io::framed_write::Encoder::Item">Item</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/actix/framed.rs.html#107-121' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Send item to a sink.</p>
+</div><h4 id='method.drain' class="method"><span id='drain.v' class='invisible'><code>pub fn <a href='#method.drain' class='fnname'>drain</a>&lt;A, T&gt;(&amp;mut self, ctx: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T) -&gt; <a class="struct" href="../../actix/utils/struct.Drain.html" title="struct actix::utils::Drain">Drain</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;A: <a class="trait" href="../../actix/prelude/trait.Actor.html" title="trait actix::prelude::Actor">Actor</a>&lt;Context = T&gt; + <a class="trait" href="../../actix/prelude/trait.StreamHandler.html" title="trait actix::prelude::StreamHandler">StreamHandler</a>&lt;&lt;Codec as <a class="trait" href="https://docs.rs/tokio-io/0.1/tokio_io/framed_read/trait.Decoder.html" title="trait tokio_io::framed_read::Decoder">Decoder</a>&gt;::<a class="type" href="https://docs.rs/tokio-io/0.1/tokio_io/framed_read/trait.Decoder.html#associatedtype.Item" title="type tokio_io::framed_read::Decoder::Item">Item</a>, <a class="enum" href="../../actix/enum.FramedError.html" title="enum actix::FramedError">FramedError</a>&lt;Codec&gt;&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../actix/prelude/trait.AsyncContext.html" title="trait actix::prelude::AsyncContext">AsyncContext</a>&lt;A&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/actix/framed.rs.html#127-139' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Initiate sink drain</p>
+
+<p>Returns future. It resolves when sink is drained.
+All other actor activities are paused until framed object get drained.</p>
+</div><h4 id='method.take' class="method"><span id='take.v' class='invisible'><code>pub fn <a href='#method.take' class='fnname'>take</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://docs.rs/tokio-io/0.1/tokio_io/framed/struct.Framed.html" title="struct tokio_io::framed::Framed">Framed</a>&lt;Io, Codec&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/actix/framed.rs.html#142-144' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Take inner framed object</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "actix";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
